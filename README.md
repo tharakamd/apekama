@@ -1,2 +1,2 @@
 # apekama
-developing a web site for sri lankan handy crafts
+Developing a web site for Sri Lankan Handy Crafts !!!
