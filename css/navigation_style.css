@@ -1,0 +1,13 @@
+/*Style*/
+
+
+
+/*Effects*/
+
+#navigation_bar ul ul{
+    display: none;
+}
+
+#navigation_bar ul li:hover > ul {
+    display: block;
+}
