@@ -1,3 +1,4 @@
+<?php require_once  '/php/verify_session.php';?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,13 +11,13 @@
     <body>
 
         <div class="">
-            <div class="row header well">
+<!--            <div class="row header well">
                 <?php require './includes/header.php'; ?>
-            </div>
+            </div>-->
             <div class="row navigation">
                 <?php require './includes/navigation.php';?>
             </div>
-            <div class="row image_slider well">
+            <div class="row image_slider">
                 <?php require './includes/image_slider.php';?>
             </div>
             <div class="row item_viewer well">

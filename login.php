@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="en">
 
 <head>
@@ -23,7 +24,8 @@
     <script type="text/javascript" src="js/loging.js"></script>
 
     <!--    Loading php files-->
-    <?php require_once 'php/login_support.php'; ?>
+    <?php require './includes/db/loging_support.php';?>
+    
 
     <!--        Web Page Title-->
     <title>Login</title>
@@ -36,13 +38,7 @@
         <img id="back_img" src="images/loging_background.jpg">
     </div>
 
-    <a href="#" id="show_alert">Click</a>
-    <div class="bs-example">
-        <div class="alert alert-danger" id="myAlert">
-            <a href="#" class="close" data-dismiss="alert">&times;</a>
-            <strong>Error!</strong> A problem has been occurred while submitting your data.
-        </div>
-    </div>
+
     <div class="button_container">
         <Button class="button button-glow button-border button-rounded button-primary login_button" id="buy_button" role="button">Buy Items</Button>
         <Button class="button button-glow button-border button-rounded button-primary login_button" id="sell_button" role="button">Sell Items</Button>
@@ -52,17 +48,17 @@
 
     <div class="main_form" id="buyer_form">
 
-        <form class="form-horizontal" id="frm_buyer">
+        <form class="form-horizontal" id="frm_buyer" action="login.php" method="post">
             <div class="form-group">
                 <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
                 <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="buyer_email">
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password" name="buyer_password">
                 </div>
             </div>
             <div class="form-group">
