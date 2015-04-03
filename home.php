@@ -1,4 +1,4 @@
-<?php require_once  '/php/verify_session.php';?>
+<?php // require_once  '/php/verify_session.php';?>
 <!DOCTYPE html>
 <html lang="en">
 
