@@ -1,13 +1,13 @@
-# apekama
+# APEKAMA
 Developing a web site for Sri Lankan Handy Crafts !!!
 
 
 ##Developers
-Dilan Tharaka
-Manoj Lakshan
-Buwaneka Kalansuriya
-Pathirath Nadeeshani
-Nauni Pamudika
+* Dilan Tharaka
+* Manoj Lakshan
+* Buwaneka Kalansuriya
+* Pathirath Nadeeshani
+* Nauni Pamudika
 
 
 ##Imported Libraries
