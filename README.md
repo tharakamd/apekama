@@ -3,7 +3,7 @@ Developing a web site for Sri Lankan Handy Crafts !!!
 
 
 ##Developers
-* Dilan Tharaka
+* Dilan Tharaka [LinkedIn](https://www.linkedin.com/in/dilantharaka)
 * Manoj Lakshan
 * Buwaneka Kalansuriya
 * Pathirath Nadeeshani
