@@ -62,6 +62,6 @@
                 <li class="navbar-right"><a href="#">About</a></li>
                 <li class="navbar-right"><a href="#">Contact</a></li>
             </ul>
-            <button class="btn btn-default" type="submit" style="float: right; margin:10px; ">Logout</button>
+            <a class="btn btn-default" href="./php/logout.php" style="float: right; margin:10px; ">Logout</a>
         </div>
 </nav>
