@@ -1,4 +1,4 @@
-<?php // require_once  '/php/verify_session.php'; ?>
+<?php require_once  '/php/verify_session.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,18 +13,19 @@
 
         <div class="">
             <!--            <div class="row header well">
-            <?php require './includes/header.php'; ?>
+            <?php //require './includes/header.php'; ?>
                         </div>-->
-            <div class="row navigation">
+            <div class="row navigation" style="margin: 0px;">
                 <?php require './includes/navigation.php'; ?>
             </div>
-            <div class="row image_slider">
+            <div class="row image_slider" style="margin: 0px;">
                 <?php require './includes/image_slider.php'; ?>
             </div>
-            <div class="row item_viewer well">
+            <div class="row item_viewer well"style="margin: 0px;">
                 <?php require './includes/item_viewer.php'; ?>
             </div>
-            <div class="row footer well">
+            <h3><a href="new_item_window.php">add new item</a></h3>
+            <div class="row footer well" style="margin: 0px; padding: 0px;">
                 <?php require './includes/footer.php'; ?>
             </div>
         </div>

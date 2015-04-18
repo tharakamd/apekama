@@ -41,7 +41,6 @@
     }
 
     .blocks {
-        padding-left: 40px
     }
     .wrapper {
         width: 100%;
@@ -63,15 +62,13 @@
     }
 
 </style>
-<div style="height: 100px;"></div>
-<div class="container" style="width:100%; margin: 0px;" >           
-    <h1 style="text-align: center;"></h1>
+<div class="container" style="width:100%; margin: 0px; padding: 5px;" >           
     <div class="body4 thebody">
         <div class="main">
             <article id="content2">
                 <div id="space"></div>			
-                <div class="wrapper">
-                    <div id="footer-inner" style="margin-left: auto; margin-right: auto; width: 70%;">
+                <div class="wrapper" style="padding-left: 20px;">
+                    <div id="footer-inner" style="margin-left: auto; margin-right: auto;">
                         <section class="col3 col3dup blocks">
                             <h4>Online shopping</h4>
                             <ul class="list1">
@@ -82,25 +79,31 @@
                             </ul>
                         </section>
                         <section class="col3 col3dup blocks">
+                            <h4>Selling Your Product</h4>
+                            <ul class="list1">
+                                <li>Online Customers</li>
+                                <li>God price </li>
+                                <li>Transportation Facilities</li>
+                                <li>Good banking Facilities</li>
+                            </ul>
+                        </section>
+                        <section class="col3 col3dup blocks">
                             <h4>Group</h4>
-                            <ul class="address">
-                                <li><span>Team:</span>friends</li>
+                            <ul class="address">                                
                                 <li><span>Member-1:</span>Dilan</li>
                                 <li><span>Member-2:</span>Manoj</li>
-                                <li><span>Member-3:</span>nadeeshani</li>
-                                <li><span>Member-4:</span>buwaneka</li>
-                                <li><span>Member-5:</span>naduni</li>
+                                <li><span>Member-3:</span>Nadeeshani</li>
+                                <li><span>Member-4:</span>Buwaneka</li>
+                                <li><span>Member-5:</span>Naduni</li>
                             </ul>
                         </section>
-                        <section class="col3 clo3dup blocks">
+                        <section class="col3 col3dup blocks">
                             <h4>Follow Us</h4>
-                            <ul id="icons">
-                                <li><a href="https://www.facebook.com/pages/Unofficial-war-thunder/1557463117843514"><img src="../img/icon1.jpg" alt="">Facebook</a></li>
-                                <li><a href="https://twitter.com/duntwarthunder"><img src="../img/icon2.jpg" alt="">Twitter</a></li>
+                            <ul class="address">
+                                <li><a href="https://www.facebook.com/pages/Unofficial-war-thunder/1557463117843514"><img src="\images\icons\facebook.png" alt=""></a></li>
+                                <li><a href="https://twitter.com/duntwarthunder"><img src="\images\icons\twitter.png" alt=""></a></li>
                             </ul>
-                        </section>
-
-
+                        </section>                       
                     </div>
                 </div>
             </article>

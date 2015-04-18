@@ -14,54 +14,50 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Arts and Crafts <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
+                        <li><a href="#">Brass</a></li>
+                        <li><a href="#">Silver</a></li>
+                        <li><a href="#">Clay</a></li>
+                        <li><a href="#">Metal</a></li>
+                        <li><a href="#">Wood</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Metal and Wood <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Gem and Jewellery <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
+                        <li><a href="#">Gems</a></li>
+                        <li><a href="#">Jewellery Sets</a></li>
+                        <li><a href="#">Bangles and Bracelets</a></li>                        
+                        <li><a href="#">Necklaces & Pendants</a></li>
+                        <li><a href="#">Earrings</a></li>
+                        <li><a href="#">Other</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Cloths and Fabric <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
+                        <li><a href="#">Bathic</a></li>
+                        <li><a href="#">Handloom</a></li>
+                        <li><a href="#">Bathware</a></li>                        
+                        <li><a href="#">Accesories</a></li>
+                        <li><a href="#">Other</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Leather and Ceramics  <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
+                        <li><a href="#">Bags and Pouches</a></li>
+                        <li><a href="#">Furniture</a></li>
+                        <li><a href="#">Ceramics</a></li>                        
+                        <li><a href="#">Other</a></li>                        
                     </ul>
                 </li>
-                <li class="navbar-right"><a href="#">About</a></li>
-                <li class="navbar-right"><a href="#">Contact</a></li>
+                <li ><a href="#">About</a></li>                
+                <li><a href="#">Contact</a></li>
             </ul>
-            <a class="btn btn-default" href="./php/logout.php" style="float: right; margin:10px; ">Logout</a>
+            <p class="form-control-static" style=" float:right; margin:10px; color: gray;"> Logged in as: <a href="https://www.facebook.com/tharakamd?fref=ts"><?php echo $_SESSION['uname']; ?></a></p>          
+            <button class="btn btn-default" type="submit" style="float:right; margin-top: 10px; ">Logout</button>
         </div>
+    </div>
 </nav>
+
+
