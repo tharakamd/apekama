@@ -57,4 +57,7 @@
             <p class="form-control-static" style=" float:right; margin:10px; color: gray;"> Logged in as: <a href="https://www.facebook.com/tharakamd?fref=ts"><?php echo $_SESSION['uname']; ?></a></p>          
             <button class="btn btn-default" type="submit" style="float:right; margin-top: 10px; ">Logout</button>
         </div>
+    </div>
 </nav>
+
+
