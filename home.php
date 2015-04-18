@@ -24,6 +24,7 @@
             <div class="row item_viewer well"style="margin: 0px;">
                 <?php require './includes/item_viewer.php'; ?>
             </div>
+            <h3><a href="new_item_window.php">add new item</a></h3>
             <div class="row footer well" style="margin: 0px; padding: 0px;">
                 <?php require './includes/footer.php'; ?>
             </div>
