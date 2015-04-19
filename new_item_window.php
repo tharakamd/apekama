@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <form action="/php/add_new_item.php" method="post" style="width: 400px;">                
+        <form action="/php/add_new_item.php" method="post" style="width: 400px;" enctype="multipart/form-data">                
             <div class="form-group">                
                 <label >Select the item category</label>
                 <select class="form-control" name="category">
@@ -40,10 +40,9 @@
                 <textarea class="form-control" name="description" rows="3"></textarea>
             </div>
             <div class="form-group">
-                <label >Item Image</label>
-                <textarea class="form-control" rows="3"></textarea>
-                <input type="file" name="inputfile" id="exampleInputFile">
-                <p class="help-block">Select a file or drag a file here</p>
+                <label >Item Image</label>                
+                Select image to upload:
+                <input type="file" name="fileToUpload" id="fileToUpload">
             </div>
             <!--div class="checkbox">
                 <label>
