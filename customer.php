@@ -1,3 +1,4 @@
+<?php require_once '/php/verify_session.php'; ?>
 <html lang="en">
 
 <head>
@@ -12,6 +13,11 @@
     <!--    Loading php files-->
     <?php require_once 'php/customer_support.php'; ?>
 
+    <style>
+        body {
+            padding-top: 60px;
+        }
+    </style>
 </head>
 
 <body>
