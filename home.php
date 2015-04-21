@@ -5,25 +5,27 @@
     <head>
         <?php include './includes/bootstrap_import_style.php'; ?>
         
-        <link rel="stylesheet" href="css/home.css">
+        <link rel="stylesheet" href="css/style.css">
         <title>Time Line</title>
     </head>
 
     <body>
 
         <div class="">
-            <div class="row navigation">
+            <!--            <div class="row header well">
+            <?php //require './includes/header.php'; ?>
+                        </div>-->
+            <div class="row navigation" style="margin: 0px;">
                 <?php require './includes/navigation.php'; ?>
             </div>
-            <div class="row image_slider">
+            <div class="row image_slider" style="margin: 0px;">
                 <?php require './includes/image_slider.php'; ?>
             </div>
-            <br>
-            <div class="row item_viewer ">
-                <div class="col-lg-2"></div>
-                <?php require './includes/ItemSlider.php'; ?>
+            <div class="row item_viewer well"style="margin: 0px;">
+                <?php require './includes/item_viewer.php'; ?>
             </div>
-            <div class="row footer">
+            <h3><a href="new_item_window.php">add new item</a></h3>
+            <div class="row footer well" style="margin: 0px; padding: 0px;">
                 <?php require './includes/footer.php'; ?>
             </div>
         </div>
