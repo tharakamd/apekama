@@ -1,3 +1,4 @@
+<?php require_once '/php/verify_session.php'; ?>
 <html lang="en">
 
 <head>
@@ -9,11 +10,19 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
+    <!--    Loading php files-->
+    <?php require_once 'php/customer_support.php'; ?>
+
+    <style>
+        body {
+            padding-top: 60px;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="row header well">
-        <?php require './includes/header.php'; ?>
+    <div class="row header">
+        <?php require './includes/navigation.php'; ?>
     </div>
     <div class="container">
         <div class="raw">
@@ -36,17 +45,36 @@
                                 <li class="list-group-item list-group-item-info" style="font-weight:bold;">City</li>
                                 <li class="list-group-item list-group-item-info" style="font-weight:bold;">State</li>
                                 <li class="list-group-item list-group-item-info" style="font-weight:bold;">Mobile Number</li>
+                                <li class="list-group-item list-group-item-info" style="font-weight:bold;">Email</li>
+                                <li class="list-group-item list-group-item-info" style="font-weight:bold;">User Name</li>
                             </ul>
                         </div>
                         <div class="col-xs-9">
                             <div class="list-group">
-                                <a href="#" class="list-group-item list-group-item-info">Selena</a>
-                                <a href="#" class="list-group-item list-group-item-info">Gomaz</a>
-                                <a href="#" class="list-group-item list-group-item-info">Suite 225</a>
-                                <a href="#" class="list-group-item list-group-item-info">Woodland Hills</a>
-                                <a href="#" class="list-group-item list-group-item-info">USA</a>
-                                <!--                                <div class="clearfix hiddend-lg hidden-md"></div>-->
-                                <a href="#" class="list-group-item list-group-item-info">(818) 849-5689</a>
+                                <a href="#" class="list-group-item list-group-item-info">
+                                    <?php echo "$first_name" ?>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-info">
+                                    <?php echo "$last_name" ?>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-info">
+                                    <?php echo "$street" ?>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-info">
+                                    <?php echo "$city" ?>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-info">
+                                    <?php echo "$state" ?>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-info">
+                                    <?php echo "$mobile_number" ?>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-info">
+                                    <?php echo "$email" ?>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-info">
+                                    <?php echo "$user_name" ?>
+                                </a>
                             </div>
                         </div>
                         <p><a class="btn btn-primary btn-lg" href="#" role="button" class="btn" style="float: right;font-weight:bold;">Edit</a>
@@ -69,12 +97,11 @@
                         </div>
                         <div class="col-xs-9">
                             <div class="list-group">
-                                <a href="#" class="list-group-item list-group-item-info">0123456789</a>
+                                <a href="#" class="list-group-item list-group-item-info">123456789A</a>
                                 <a href="#" class="list-group-item list-group-item-info">Selena Gomaz</a>
-                                <a href="#" class="list-group-item list-group-item-info">HSBC</a>
+                                <a href="#" class="list-group-item list-group-item-info">Sampath Bank</a>
                                 <a href="#" class="list-group-item list-group-item-info">Woodland Hills</a>
                                 <a href="#" class="list-group-item list-group-item-info">678A</a>
-                                <!--                                <div class="clearfix hiddend-lg hidden-md"></div>-->
                                 <a href="#" class="list-group-item list-group-item-info">Savings Account</a>
                             </div>
                         </div>
