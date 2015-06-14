@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
     <!--    Loading php files-->
-<!--    <?php require_once 'php/customer_support.php'; ?>-->
+    <?php require_once 'php/customer_support.php'; ?>
 
     <style>
         body {
@@ -28,7 +28,7 @@
         <div class="raw">
             <div class="jumbotron" style="border-style:solid; border-color:#337ab7; background-color:rgba(240, 244, 247, 0.4)">
                 <img src="images/20.jpg" class="img-rounded" class="img-responsive" alt="Responsive image" style="outline-width:thick; outline-style:solid; outline-color:#337ab7">
-                <a class="btn btn-primary btn-lg" href="./customer_edit.php" role="button" style="float:right; font-weight:bold;">Edit</a>
+                <a class="btn btn-primary btn-lg" href="./customer.php" role="button" style="float:right; font-weight:bold;">Save</a>
                 <p></p>
                 <br>
                 <div class="panel panel-primary">
@@ -39,37 +39,49 @@
                         <div class="col-xs-3">
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-info" style="font-weight:bold;">First Name</li>
+                                <br>
                                 <li class="list-group-item list-group-item-info" style="font-weight:bold;">Last Name</li>
+                                <br>
                                 <li class="list-group-item list-group-item-info" style="font-weight:bold;">Street</li>
+                                <br>
                                 <li class="list-group-item list-group-item-info" style="font-weight:bold;">City</li>
+                                <br>
                                 <li class="list-group-item list-group-item-info" style="font-weight:bold;">State</li>
+                                <br>
                                 <li class="list-group-item list-group-item-info" style="font-weight:bold;">Email</li>
+                                <br>
                                 <li class="list-group-item list-group-item-info" style="font-weight:bold;">User Name</li>
                             </ul>
                         </div>
+                        
                         <div class="col-xs-9">
                             <div class="list-group">
                                 <a href="#" class="list-group-item list-group-item-info">
-                                    <?php echo "$first_name" ?>
+                                    <input style="height:20px;" type="text" class="list-control" placeholder="First Name" id="customer_first_name" name="first_name">
                                 </a>
+                                <br>
                                 <a href="#" class="list-group-item list-group-item-info">
-                                    <?php echo "$last_name" ?>
+                                    <input style="height:20px;" type="text" class="list-control" placeholder="Last Name" id="customer_last_name" name="last_name">
                                 </a>
+                                <br>
                                 <a href="#" class="list-group-item list-group-item-info">
-                                    <?php echo "$street" ?>
+                                    <input style="height:20px;" type="text" class="list-control" placeholder="Street" id="customer_street" name="street">
                                 </a>
+                                <br>
                                 <a href="#" class="list-group-item list-group-item-info">
-                                    <?php echo "$city" ?>
+                                    <input style="height:20px;" type="text" class="list-control" placeholder="City" id="customer_city" name="city">
                                 </a>
+                                <br>
                                 <a href="#" class="list-group-item list-group-item-info">
-                                    <?php echo "$state" ?>
+                                    <input style="height:20px;" type="text" class="list-control" placeholder="State" id="customer_state" name="state">
                                 </a>
-
+                                <br>
                                 <a href="#" class="list-group-item list-group-item-info">
-                                    <?php echo "$email" ?>
+                                    <input style="height:20px;" type="text" class="list-control" placeholder="Your Email" id="customer_email" name="email">
                                 </a>
+                                <br>
                                 <a href="#" class="list-group-item list-group-item-info">
-                                    <?php echo "$user_name" ?>
+                                    <input style="height:20px;" type="text" class="list-control" placeholder="Unique User Name" id="customer_user_name" name="user_name">
                                 </a>
                             </div>
                         </div>
@@ -83,24 +95,31 @@
                         <div class="col-xs-3">
                             <ul class="list-group">
                                 <li class="list-group-item list-group-item-info" style="font-weight:bold;">Card Number</li>
+                                <br>
                                 <li class="list-group-item list-group-item-info" style="font-weight:bold;">Name on Card</li>
+                                <br>
                                 <li class="list-group-item list-group-item-info" style="font-weight:bold;">Expiary Date</li>
+                                <br>
                                 <li class="list-group-item list-group-item-info" style="font-weight:bold;">Pin</li>
                             </ul>
                         </div>
+                        
                         <div class="col-xs-9">
                             <div class="list-group">
                                 <a href="#" class="list-group-item list-group-item-info">
-                                    <?php echo "$number" ?>
+                                    <input style="height:20px;" type="text" class="list-control" placeholder="Card Number" id="card_number" name="card_number">
                                 </a>
+                                <br>
                                 <a href="#" class="list-group-item list-group-item-info">
-                                    <?php echo "$name" ?>
+                                    <input style="height:20px;" type="text" class="list-control" placeholder="Name on Card" id="card_name" name="card_name">
                                 </a>
+                                <br>
                                 <a href="#" class="list-group-item list-group-item-info">
-                                    <?php echo "$exp_date" ?>
+                                    <input style="height:20px;" type="date" class="list-control" placeholder="Expiray Date" id="card_exp_date" name="exp_date">
                                 </a>
+                                <br>
                                 <a href="#" class="list-group-item list-group-item-info">
-                                    <?php echo "$pin" ?>
+                                    <input style="height:20px;" type="number" class="list-control" placeholder="Pin Number" id="card_pin_number" name="pin_number">
                                 </a>
                             </div>
                         </div>
