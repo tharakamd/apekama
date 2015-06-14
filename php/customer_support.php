@@ -11,7 +11,7 @@ if ($conn->connect_error) {
     die("Connection failed!" . $conn->connect_error);
 } 
 
-// Select records from the database
+// Display records from the database
 $uname = $_SESSION['uname'];
 $query1 = "SELECT * FROM buyer WHERE username='$uname' ";
 $result1 = $conn->query($query1);
@@ -23,12 +23,13 @@ while($i = $result1->fetch_assoc()){
     $state=$i["state"];
     $user_name=$i["username"];
     $email=$i["email"];
+    $number=$i["card_number"];
+    $name=$i["name_on_card"];
+    $exp_date=$i["card_exp_date"];
+    $pin=$i["card_pin"];
 }
 
-$query2 = "SELECT mobile_number FROM buyer_mobile_number,buyer WHERE buyer.buyer_id=buyer_mobile_number.buyer_id AND buyer.username='Selena'";
-$result2 = $conn->query($query2);
-while($j = $result2->fetch_assoc()){
-     $mobile_number=$j["mobile_number"];
-}
+// Add records to the database - Use Sign-in 
+// Update records in the database - Use Edit button press
 
 ?>
