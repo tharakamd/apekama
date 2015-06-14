@@ -19,17 +19,11 @@ if (!isset($_SESSION['admin'])) {
 
     <body>
 
-       
-        <div class="row">
-            <div class="col-lg-10"></div>
-            <div class="col-lg-1">
-                <a href="logout.php" class="btn btn-default">Log Out</a>
-            </div>
-        </div>
-        
+
+
         <div class="row seller_select_row">
             <div class="col-lg-1"></div>
-            <div class="col-lg-5">
+            <div class="col-lg-3">
                 <form class="form-inline" method="post" action="home.php">
                     <div class="form-group">
                         <label>Select seller email</label>
@@ -62,7 +56,18 @@ if (!isset($_SESSION['admin'])) {
                     </div>
                 </form>    
             </div>  
-            <div class="col-lg-6"></div>
+
+            <div class="col-lg-2"></div>
+            <div class="col-lg-1"><a href="logout.php" class="btn btn-default">Log Out</a></div>
+            <!--<div class="col-lg-5"></div>-->
+        </div>
+        <div class="row">
+            <div class="col-lg-2">
+
+
+
+
+            </div>
         </div>
         <div class="row seller_info_row">
             <div class="col-lg-1"></div>
@@ -74,7 +79,7 @@ if (!isset($_SESSION['admin'])) {
             $seller_email;
             $issellected = false;
             if (isset($_POST['seller_list']) || isset($_GET['seller_list'])) {
-                if(isset($_POST['seller_list']))
+                if (isset($_POST['seller_list']))
                     $seller_email = strip_tags($_POST['seller_list']);
                 else
                     $seller_email = strip_tags($_GET['seller_list']);
@@ -85,7 +90,7 @@ if (!isset($_SESSION['admin'])) {
                 $sent = $connection->query($sql);
             }
             ?>
-          
+
             <div class="col-lg-4 well">
                 <?php
                 if ($issellected) {
@@ -127,7 +132,7 @@ if (!isset($_SESSION['admin'])) {
 
             </div>
             <div class="col-lg-4 well">
-          
+
                 <?php
                 if ($issellected) {
                     ?>
@@ -211,7 +216,7 @@ if (!isset($_SESSION['admin'])) {
                 <div class="col-lg-1"></div>
                 <div class="col-lg-6">
 
-                    <form class="form-inline" method="post" action="home.php?seller_list=<?php echo $seller_email;  ?>">
+                    <form class="form-inline" method="post" action="home.php?seller_list=<?php echo $seller_email; ?>">
                         <div class="form-group">
                             <label>Enter amount to send</label>
                             <input type="text" name="sending_amount" class="form-control" placeholder="<= <?php echo $remain; ?>">
@@ -220,56 +225,120 @@ if (!isset($_SESSION['admin'])) {
                     </form>
                 </div>
             </div>
-        
-          
+
+
             <div class="row  result-row">
                 <div class="col-lg-1"></div>
                 <div class="col-lg-3">
-                    <?php 
-                        if(isset($_POST['sending_amount'])){
-                            $entered_amount = strip_tags($_POST['sending_amount']);
-                            if(!empty($entered_amount)){
-                                try{
-                                    if(is_numeric($entered_amount)){
-                                    if($remain>=$entered_amount){
+                    <?php
+                    if (isset($_POST['sending_amount'])) {
+                        $entered_amount = strip_tags($_POST['sending_amount']);
+                        if (!empty($entered_amount)) {
+                            try {
+                                if (is_numeric($entered_amount)) {
+                                    if ($remain >= $entered_amount) {
                                         $date = date("Y-m-d");
-                                        $sql = "select seller_id from seller where email = '$seller_email'";
+                                        $sql = "select * from seller where email = '$seller_email'";
                                         $result = $connection->query($sql);
                                         $seller_id;
-                                        if($result->num_rows>0){
-                                            while($row = $result->fetch_assoc()){
+                                        $name_on_card;
+                                        $card_number;
+                                        $card_exp_date;
+                                        $card_pin;
+                                        if ($result->num_rows > 0) {
+                                            while ($row = $result->fetch_assoc()) {
                                                 $seller_id = $row['seller_id'];
+                                                $name_on_card = $row['name_on_card'];
+                                                $card_number = $row['card_number'];
+                                                $card_exp_date = $row['card_exp_date'];
+                                                $card_pin = $row['card_pin'];
                                             }
                                         }
-                                        echo $date;
-                                        $sql = "insert into paymentsent(seller_id,amount,date_time) values('$seller_id',$entered_amount,'$date')";
-                                        if($connection->query($sql)){
-                                            echo $connection->error;
-                                            echo '<div class="alert alert-success" role="alert"><strong>Payment Proceeded Succesfully</strong></div>';
-                                        }else{
-                                            echo '<div class="alert alert-danger" role="alert"><strong>Error in transaction</strong></div>';
+                                        // connecting with the bank
+                                        $host_bank = "localhost";
+                                        $user_bank = "root";
+                                        $pw_bank = "";
+                                        $db_bank = "bank";
+
+                                        $connection_bank = new mysqli($host_bank, $user_bank, $pw_bank, $db_bank);
+                                        if ($connection_bank->connect_error) { // if connected with bank
+                                            echo('<div class="alert alert-danger" role="alert"><strong>Unable to connect with the bank</strong></div>');
+                                        } else {
+                                            $sql = "select * from customer natural join card where number = '$card_number'";
+                                            $result_bank = $connection_bank->query($sql);
+                                            if ($result_bank->num_rows > 0) {
+
+                                                $name_on_card_bank;
+                                                $card_number_bank;
+                                                $card_exp_date_bank;
+                                                $pin_bank;
+                                                $balance_bank;
+                                                while ($row_bank = $result_bank->fetch_assoc()) {
+                                                    $name_on_card_bank = $row_bank['name'];
+                                                    $card_number_bank = $row_bank['number'];
+                                                    $card_exp_date_bank = $row_bank['exp_date'];
+                                                    $pin_bank = $row_bank['pin'];
+                                                    $balance_bank = $row_bank['balance'];
+                                                }
+                                                if (strcmp($name_on_card, $name_on_card_bank) == 0) {
+                                                    if (strcmp($card_number, $card_number_bank) == 0) {
+                                                        if (strcmp($pin_bank, $card_pin) == 0) {
+                                                            if (strcasecmp($card_exp_date, $card_exp_date_bank) == 0) {
+                                                                $date_local = new DateTime("now"); // today
+                                                                $date_bank_exp = new DateTime($card_exp_date_bank); // exp date
+                                                                if ($date_local > $date_bank_exp) { // card expired
+                                                                    echo '<div class="alert alert-danger" role="alert"><strong>Card Expired</strong></div>';
+                                                                } else { // not expired
+                                                                    // adding money to the card
+                                                                    $sql = "update card set balance = balance + $entered_amount where number = '$card_number'";
+                                                                    if ($connection_bank->query($sql)) {
+                                                                        //updating the local database
+                                                                        $sql = "insert into paymentsent(seller_id,amount,date_time) values('$seller_id',$entered_amount,'$date')";
+                                                                        if ($connection->query($sql)) {
+                                                                            //echo '<div class="alert alert-success" role="alert"><strong>Payment Proceeded Succesfully</strong></div>';
+                                                                          echo '<script>';
+                                                                           echo ' window.location.replace("payment_success.php")';
+                                                                           echo '</script>';
+                                                                        } else {
+                                                                            echo '<div class="alert alert-danger" role="alert"><strong>Error in transaction</strong></div>';
+                                                                        }
+                                                                    } else {
+                                                                        echo '<div class="alert alert-danger" role="alert"><strong>Error in transaction</strong></div>';
+                                                                    }
+                                                                }
+                                                            } else {
+                                                                echo '<div class="alert alert-danger" role="alert"><strong>Wrong card details </strong></div>';
+                                                            }
+                                                        } else {
+                                                            echo '<div class="alert alert-danger" role="alert"><strong>Wrong card details</strong></div>';
+                                                        }
+                                                    } else {
+                                                        echo '<div class="alert alert-danger" role="alert"><strong>Wrong card details</strong></div>';
+                                                    }
+                                                } else {
+                                                    echo '<div class="alert alert-danger" role="alert"><strong>Wrong card details name</strong></div>';
+                                                }
+                                            } else {
+                                                echo '<div class="alert alert-danger" role="alert"><strong>Error in transaction</strong></div>';
+                                            }
                                         }
-                                        
-                                    }else{
+                                    } else {
                                         echo '<div class="alert alert-danger" role="alert"><strong>Number exceeds the payble amount</strong></div>';
                                     }
-                                    }else{
-                                        echo '<div class="alert alert-danger" role="alert"><strong>Invalid Amount</strong></div>';
-                                    }
-                                } catch (Exception $ex) {
+                                } else {
                                     echo '<div class="alert alert-danger" role="alert"><strong>Invalid Amount</strong></div>';
                                 }
+                            } catch (Exception $ex) {
+                                echo '<div class="alert alert-danger" role="alert"><strong>Invalid Amount</strong></div>';
                             }
-                            
                         }
-                        
+                    }
                     ?>
-                    
                 </div>
             </div>
-        <?php } ?>
+<?php } ?>
 
 
-        <?php include '../includes/bootstrap_import_script.php' ?>
+<?php include '../includes/bootstrap_import_script.php' ?>
     </body>
 </html>
